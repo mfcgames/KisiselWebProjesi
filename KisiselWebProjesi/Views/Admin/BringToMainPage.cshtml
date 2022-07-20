@@ -1,0 +1,31 @@
+﻿@model KisiselWebProjesi.Models.Classes.MainPage
+@{
+    ViewBag.Title = "BringToMainPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Bring To Main Page</h2>
+<hr />
+@using (Html.BeginForm("UpdateMainPage", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.NameSurname)
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Image)
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Title)
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Communication)
+    @Html.TextBoxFor(x => x.Communication, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <button class="btn btn-success">Update</button>
+
+}

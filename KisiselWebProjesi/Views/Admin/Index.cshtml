@@ -1,0 +1,25 @@
+﻿@using KisiselWebProjesi.Models.Classes
+@model List<MainPage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EDIT</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.NameSurname</td>
+            <td><a href="/Admin/BringToMainPage/@item.ID" class="btn btn-primary">Edit</a></td>
+        </tr>
+    }
+
+
+</table>
