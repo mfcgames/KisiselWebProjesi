@@ -1,0 +1,22 @@
+﻿@model KisiselWebProjesi.Models.Classes.Icons
+@{
+    ViewBag.Title = "EditIcon";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit Icon</h2>
+<br/>
+@using (Html.BeginForm("UpdateIcon", "Admin", FormMethod.Post)) { 
+
+    @Html.LabelFor(x=>x.ID)
+    @Html.TextBoxFor(x => x.ID, new {@class="form-control",@readonly="readonly"})
+    <br/>
+    @Html.LabelFor(x=>x.IconName)
+    @Html.TextBoxFor(x => x.IconName, new {@class="form-control"})
+    <br/>
+    @Html.LabelFor(x=>x.Link)
+    @Html.TextBoxFor(x => x.Link, new {@class="form-control"})
+    <br/>
+    <button class="btn btn-success" style="color:burlywood;">Update</button>
+}
+

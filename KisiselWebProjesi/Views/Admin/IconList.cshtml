@@ -1,0 +1,28 @@
+﻿@using KisiselWebProjesi.Models.Classes
+@model List<Icons>
+@{
+    ViewBag.Title = "IconList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="mb-4" style="color:rgb(255, 106, 0);">Icon Page</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Icon</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td><i class="@item.IconName"></i></td>
+            <td><a href="/Admin/EditIcon/@item.ID" class="btn btn-primary">Edit</a></td>
+            <td><a href="/Admin/RemoveIcon/@item.ID" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<hr />
+<a href="/Admin/AddIcon" class="btn btn-primary">Add New Icon</a>
+
+
